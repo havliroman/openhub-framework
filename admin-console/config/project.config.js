@@ -33,7 +33,7 @@ const config = {
 
   mock_server_port: 8080,
   mock_server_host: 'http://localhost:8080',
-  mock_server_prefix: '/api',
+  mock_server_prefix: '/web/admin',
 
   // ----------------------------------
   // Compiler Configuration

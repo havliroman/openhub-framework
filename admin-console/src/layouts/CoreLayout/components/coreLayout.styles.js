@@ -11,6 +11,10 @@ export default {
   body: {
     ...transition(),
     ...dev,
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+    boxSizing: 'border-box',
     extended: {
       paddingLeft: `${sidebarWidth}px`
     }

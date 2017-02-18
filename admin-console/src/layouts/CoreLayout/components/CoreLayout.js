@@ -9,7 +9,14 @@ import LoginModal from '../../../common/containers/loginModal.container'
 class CoreLayout extends Component {
 
   render () {
-    const { isAuth, children, sidebarExtended, navbarUserExpanded, actions, authActions } = this.props
+    const {
+      isAuth,
+      children,
+      sidebarExtended,
+      navbarUserExpanded,
+      actions,
+      authActions
+    } = this.props
     const bodyStyles = [
       styles.body,
       sidebarExtended && isAuth && styles.body.extended
