@@ -52,7 +52,7 @@ public class WebConfigurer {
         CamelHttpTransportServlet servlet = new CamelHttpTransportServlet();
         servlet.setServletName(RouteConstants.CAMEL_SERVLET);
 
-        ServletRegistrationBean bean = new ServletRegistrationBean(servlet, RouteConstants.HTTP_URI_PREFIX_MAPPING);
+        ServletRegistrationBean bean = new ServletRegistrationBean(servlet, RouteConstants.HTTP_URI_PREFIX_MAPPING, "/countries/*");
         bean.setName(servlet.getServletName());
 
         return bean;

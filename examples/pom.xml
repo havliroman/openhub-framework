@@ -29,6 +29,24 @@
             <artifactId>openhub-core-api</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jackson</artifactId>
+        </dependency>
+
+        <dependency>
+            <artifactId>jackson-annotations</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>jackson-core</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>jackson-databind</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+        </dependency>
+
         <!-- test dependencies -->
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -105,6 +123,9 @@
                                 <resource>
                                     <directory>${modules.root.directory}/in/hello/ws/v1_0</directory>
                                 </resource>
+                                <resource>
+                                    <directory>${modules.root.directory}/out/cities/ws/v1_0</directory>
+                                </resource>
                             </resources>
                         </configuration>
                     </execution>
@@ -133,6 +154,23 @@
                             <packageName>org.openhubframework.openhub.modules.in.hello.model</packageName>
                             <wsdlFiles>
                                 <wsdlFile>hello-v1.0.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <bindingFiles>
+                                <bindingFile>jaxb_global_bindings.xjb</bindingFile>
+                                <bindingFile>jaxb_common_bindings.xjb</bindingFile>
+                            </bindingFiles>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>WSDL-import-in-cities-model</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <staleFile>${project.build.directory}/jaxws/.out.cities.model</staleFile>
+                            <packageName>org.openhubframework.openhub.modules.out.cities.model</packageName>
+                            <wsdlFiles>
+                                <wsdlFile>cities-v1.0.wsdl</wsdlFile>
                             </wsdlFiles>
                             <bindingFiles>
                                 <bindingFile>jaxb_global_bindings.xjb</bindingFile>

@@ -20,6 +20,15 @@
         <camel:errorHandler id="logErrorHandler" type="LoggingErrorHandler" logName="org.openhubframework.openhub.core"/>
 
         <camel:threadPoolProfile id="defaultThreadProfile" defaultProfile="true" maxPoolSize="30"/>
+
+        <camel:dataFormats>
+            <camel:json id="jack" library="Jackson"/>
+        </camel:dataFormats>
+
+        <camel:restConfiguration component="servlet" bindingMode="json" contextPath="/countries" />
+
+
+
     </camel:camelContext>
 
 </beans>

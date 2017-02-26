@@ -37,4 +37,18 @@ public class ExampleProperties {
      */
     public static final String EXAMPLE_PROFILE = "example-module";
 
+    /**
+     * Direct end-point for route starting from the REST service.
+     */
+    public static final String CITIES_REST_DIRECT = "direct:country";
+
+    /**
+     * Direct end-point for processing the response.
+     */
+    public static final String CITIES_PROCESSING_DIRECT = "direct:processing";
+
+    public static final String CITIES_TO_FILE_DIRECT = "direct:saveToFile";
+
+    public static final String CITIES_REST_RESPONSE_DIRECT = "direct:restResponse";
+
 }
